@@ -31,13 +31,9 @@ export const contractAddresses = {
     3: '0x0Cbbe6EA2039f06B846F4b4d0D058efB7864071f',
     //42: '0xEFa7b6952535b70807ce012D19D13d18970Bb58d',
   },  
-  weth: {
-     //3: '0x2D56ed810bb4Aa86b715f623615A34eE0DEA5bbC',//self
-    //42: '0x2bfCCE707529264856d87DEeeeB64cdcFf755a84',
-    //Mainnet: 0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2,//Mainnet
-    //Kovan: 0xd0a1e359811322d97991e03f863a0c30c2cf029c,//Kovan
-    3: '0xc778417e063141139fce010982780140aa0cd5ab',//Ropsten
-    //Rinkeby: 0xc778417e063141139fce010982780140aa0cd5ab,//Rinkeby
+  weth: {     
+    //42: '0x2bfCCE707529264856d87DEeeeB64cdcFf755a84',    
+    3: '0xc778417e063141139fce010982780140aa0cd5ab',
   },
 }
 
