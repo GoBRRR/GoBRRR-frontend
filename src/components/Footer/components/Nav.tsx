@@ -51,13 +51,15 @@ const Styledlayout = styled.nav`
   padding-right: ${(props) => props.theme.spacing[40]}px;
   color: #06f74f;
   font-size: 20px;
+  font-weight: 800;
 `
 
 
 const StyledLink = styled.a`
   font-family: Lucida Console,Monaco,monospace;
   font-weight: 600;
-  font-size: 22px;
+  font-size: 20px;
+  font-weight: 800;
   color: ${(props) => props.theme.color.grey[400]};
   padding-left: ${(props) => props.theme.spacing[1]}px;
   padding-right: ${(props) => props.theme.spacing[1]}px;

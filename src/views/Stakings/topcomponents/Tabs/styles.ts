@@ -41,9 +41,9 @@ export const Button = styled.button`
     height: 30px;
     width: 0%;
 
-    opacity: 0.5;
+    opacity: 0;
 
-    background-color: #edece1;
+    background-color: #e2ee2a;
     transition: 0.4s;
   }
 

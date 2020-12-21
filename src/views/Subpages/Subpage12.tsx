@@ -83,8 +83,8 @@ const Subpage12: React.FC = () => {
   const brrrIndex = farms.findIndex(
     ({ tokenSymbol }) => tokenSymbol === 'UNI',
   )
-  console.log("stakedValue",stakedValue)  
-  console.log("brrrIndex",brrrIndex)
+  //console.log("stakedValue",stakedValue)  
+  //console.log("brrrIndex",brrrIndex)
   const brrrPrice =
     brrrIndex >= 0 && stakedValue[brrrIndex]
       ? stakedValue[brrrIndex].tokenPriceInWeth

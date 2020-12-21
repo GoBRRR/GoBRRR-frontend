@@ -60,9 +60,13 @@ const Providers: React.FC = ({ children }) => {
   return (
     <ThemeProvider theme={theme}>
       <UseWalletProvider
+        //chainId={1}
+        //connectors={{
+        //  walletconnect: { rpcUrl: 'https://mainnet.infura.io/v3/ef144a677a0d49c0b4521823c8b42679' },
+        //}}
         chainId={3}
         connectors={{
-          walletconnect: { rpcUrl: 'https://ropsten.infura.io/v3/8f3443d966884c7288b940947b5c37c1' },
+          walletconnect: { rpcUrl: 'https://ropsten.infura.io/v3/ef144a677a0d49c0b4521823c8b42679' },
         }}
         //connectors={{
         //  walletconnect: { rpcUrl: 'https://kovan.infura.io/v3/8f3443d966884c7288b940947b5c37c1' },         
