@@ -3,11 +3,11 @@ import React, { useEffect, useState } from 'react'
 import CountUp from 'react-countup'
 import styled from 'styled-components'
 import { useWallet } from 'use-wallet'
-import Card from '../../../components/Card'
+import FirstCard from '../../../components/FirstCard'
 import CardContent from '../../../components/CardContent'
-import Label from '../../../components/Label'
+import FirstLabel from '../../../components/FirstLabel'
 import Spacer from '../../../components/Spacer'
-import Value from '../../../components/Value'
+import FirstValue from '../../../components/FirstValue'
 import ChangedBrrrIcon from '../../../components/ChangedBrrrIcon'
 import useAllEarnings from '../../../hooks/useAllEarnings'
 import useAllStakedValue from '../../../hooks/useAllStakedValue'
@@ -81,15 +81,15 @@ const Balances: React.FC = () => {
 
   return (
     <StyledWrapper>
-      <Card>
+      <FirstCard>
         <CardContent>
           <StyledBalances>
             <StyledBalance>
               <ChangedBrrrIcon />
               <Spacer />
               <div style={{ flex: 1 }}>
-                <Label text="Your BRRR Balance" />
-                <Value
+                <FirstLabel text="YOUR BALANCE" />
+                <FirstValue
                   value={!!account ? getBalanceNumber(brrrBalance) : 'Locked'}
                 />
               </div>
@@ -102,13 +102,13 @@ const Balances: React.FC = () => {
             <PendingRewards /> BRRR
           </FootnoteValue>
         </Footnote>
-      </Card>
+      </FirstCard>
       <Spacer />
 
-      <Card>
+      <FirstCard>
         <CardContent>
-          <Label text="Total BRRR Supply" />
-          <Value
+          <FirstLabel text="TOTAL SUPPLY" />
+          <FirstValue
             value={totalSupply ? getBalanceNumber(totalSupply) : 'Locked'}
           />
         </CardContent>
@@ -116,7 +116,7 @@ const Balances: React.FC = () => {
           New rewards per block
           <FootnoteValue>1 BRRR</FootnoteValue>
         </Footnote>
-      </Card>
+      </FirstCard>
     </StyledWrapper>
   )
 }
@@ -124,7 +124,7 @@ const Balances: React.FC = () => {
 const Footnote = styled.div`
   font-size: 14px;
   padding: 8px 20px;
-  color: ${(props) => props.theme.color.grey[600]};
+  color: #ffffff;
   border-top: solid 1px ${(props) => props.theme.color.grey[300]};
 `
 const FootnoteValue = styled.div`

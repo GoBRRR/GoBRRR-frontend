@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Container, TabLinks, Button, TabContent, TabBottomline, Section, Footnote } from './styles';
+import { Container, TabLinks, Button, TabContent, TabBottomline, Section, Footnote, Footnotetitle } from './styles';
 
 import EthBrrr from '../../../../components/EthBrrr'
 import UniBrrr from '../../../../components/UniBrrr'
@@ -115,7 +115,7 @@ const Tabs: React.FC = () => {
         <Section className={ethbrrr}>
           <Footnote>Farm your BRRR and grow more BRRR</Footnote>
           <Subpage01/>
-          <Footnote>BRRR/ETH Pool</Footnote>
+          <Footnotetitle>BRRR/ETH Pool</Footnotetitle>
           <Layout1/>
           <GlobalStyles/>
         </Section>
@@ -123,7 +123,7 @@ const Tabs: React.FC = () => {
         <Section className={unibrrr}>
           <Footnote>Farm your BRRR and grow more BRRR</Footnote>
           <Subpage01/>
-          <Footnote>BRRR/UNI Pool</Footnote>
+          <Footnotetitle>BRRR/UNI Pool</Footnotetitle>
           <Layout2/>
           <GlobalStyles/>
         </Section>
@@ -131,7 +131,7 @@ const Tabs: React.FC = () => {
         <Section className={daibrrr}>
           <Footnote>Farm your BRRR and grow more BRRR</Footnote>
           <Subpage01/>
-          <Footnote>BRRR/DAI Pool</Footnote>
+          <Footnotetitle>BRRR/DAI Pool</Footnotetitle>
           <Layout3/>
           <GlobalStyles/>
         </Section>
@@ -139,7 +139,7 @@ const Tabs: React.FC = () => {
         <Section className={wbtcbrrr}>
           <Footnote>Farm your BRRR and grow more BRRR</Footnote>
           <Subpage01/>
-          <Footnote>BRRR/WBTC Pool</Footnote>
+          <Footnotetitle>BRRR/WBTC Pool</Footnotetitle>
           <Layout4/>
           <GlobalStyles/>
         </Section>
@@ -147,7 +147,7 @@ const Tabs: React.FC = () => {
         <Section className={usdcbrrr}>
           <Footnote>Farm your BRRR and grow more BRRR</Footnote>
           <Subpage01/>
-          <Footnote>BRRR/USDC Pool</Footnote>
+          <Footnotetitle>BRRR/USDC Pool</Footnotetitle>
           <Layout5/>
           <GlobalStyles/>
         </Section>

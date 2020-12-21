@@ -44,25 +44,26 @@ const Nav: React.FC = () => {
 const StyledNav = styled.nav`
   align-items: center;
   display: flex;
-  background-color: #241460;
+  background-color: #153e90;
 `
 const Styledlayout = styled.nav`
   display: flex;
   padding-right: ${(props) => props.theme.spacing[40]}px;
-  color: ${(props) => props.theme.color.grey[900]};
+  color: #06f74f;
+  font-size: 20px;
 `
 
 
 const StyledLink = styled.a`
   font-family: Lucida Console,Monaco,monospace;
   font-weight: 600;
-  font-size: 15px;
+  font-size: 22px;
   color: ${(props) => props.theme.color.grey[400]};
   padding-left: ${(props) => props.theme.spacing[1]}px;
   padding-right: ${(props) => props.theme.spacing[1]}px;
   text-decoration: none;
   &:hover {
-    color: ${(props) => props.theme.color.grey[500]};
+    color: #f0e64d;
   }
 `
 

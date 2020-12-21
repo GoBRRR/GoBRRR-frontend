@@ -2,8 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 import Container from '../Container'
-import brocoli from '../../assets/img/brocoli.jpg'
-import carrot from '../../assets/img/carrot.png'
 
 interface PageHeaderProps {
   icon: React.ReactNode

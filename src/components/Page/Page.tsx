@@ -14,7 +14,7 @@ const StyledPage = styled.div``
 const StyledMain = styled.div`
   align-items: center;
   display: flex;
-  background-color: #241460;
+  background-color: #153e90;
   flex-direction: column;
   min-height: calc(100vh - ${(props) => props.theme.topBarSize * 2}px);
 `

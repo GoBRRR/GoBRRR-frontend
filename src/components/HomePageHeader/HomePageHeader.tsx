@@ -40,7 +40,7 @@ const StyledTitle = styled.h1`
 `
 
 const StyledSubtitle = styled.h3`
-  color: #fff;
+  color: #ffea00;
   font-size: 25px;
   font-weight: 600;
   margin: 0;

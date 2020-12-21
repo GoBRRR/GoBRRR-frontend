@@ -37,7 +37,7 @@ const StyledLogoWrapper = styled.div`
 `
 
 const StyledTopBar = styled.div`  
-background-color: #241460;  
+background-color: #153e90;  
 `
 
 const StyledTopBarInner = styled.div`

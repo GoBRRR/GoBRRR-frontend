@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import Button from '../../../components/Button'
-import Card from '../../../components/Card'
+import FirstCard from '../../../components/FirstCard'
 import CardContent from '../../../components/CardContent'
 import SmallCardIcon from '../../../components/SmallCardIcon'
-import Label from '../../../components/Label'
-import Value from '../../../components/Value'
+import FirstLabel from '../../../components/FirstLabel'
+import FirstValue from '../../../components/FirstValue'
 import useEarnings from '../../../hooks/useEarnings'
 import useReward from '../../../hooks/useReward'
 import chef from '../../../assets/img/icon_image.png'
@@ -19,15 +19,16 @@ const Harvest: React.FC<HarvestProps> = ({ pid }) => {
   const earnings = useEarnings(pid)
   const [pendingTx, setPendingTx] = useState(false)
   const { onReward } = useReward(pid)
+  
 
   return (
-    <Card>
+    <FirstCard>
       <CardContent>
         <StyledCardContentInner>
           <StyledCardHeader>
           <SmallCardIcon><img src={chef} height="32" style={{ marginTop: 0 }} /> </SmallCardIcon>
-            <Value value={getBalanceNumber(earnings)} />
-            <Label text="BRRR Earned" />
+            <FirstValue value={getBalanceNumber(earnings)} />
+            <FirstLabel text="BRRR Earned" />
             <Label1></Label1>
           </StyledCardHeader>
           <StyledCardActions>
@@ -44,7 +45,7 @@ const Harvest: React.FC<HarvestProps> = ({ pid }) => {
           </StyledCardActions>
         </StyledCardContentInner>
       </CardContent>
-    </Card>
+    </FirstCard>
   )
 }
 

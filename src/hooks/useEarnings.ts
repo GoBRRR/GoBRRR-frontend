@@ -22,6 +22,7 @@ const useEarnings = (pid: number) => {
     const balance = await getEarned(masterChefContract, pid, account)
     setBalance(new BigNumber(balance))
   }, [account, masterChefContract, brrr])
+  
 
   useEffect(() => {
     if (account && masterChefContract && brrr) {

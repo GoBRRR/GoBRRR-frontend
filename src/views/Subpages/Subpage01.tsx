@@ -40,12 +40,12 @@ const Subpage01: React.FC = () => {
         <ChangedBrrrIcon />
         <Spacer />
         <div style={{ flex: 1 }}>
+          <StyledValueBelow>
+            My BRRR
+          </StyledValueBelow>
           <StyledValue>
             {!!account ? getBalanceNumber(brrrBalance) : 'Locked'}
-          </StyledValue>
-          <StyledValueBelow>
-            BRRR
-          </StyledValueBelow>
+          </StyledValue>          
         </div>
       </StyledBalance>
 
@@ -92,7 +92,7 @@ const StyledValue = styled.div`
   color: ${(props) => props.theme.color.grey[600]};
   font-size: 20px;
   font-weight: 800;
-  padding-top: 30px;
+  padding-top: 1px;
   color: #ffffff;
 `
 const StyledValueBelow = styled.div`
@@ -100,7 +100,7 @@ const StyledValueBelow = styled.div`
   color: ${(props) => props.theme.color.grey[600]};
   font-size: 20px;
   font-weight: 800;
-  padding-bottom: 15px;
+  padding-bottom: 1px;
   color: #e2ee2a;
 `
 

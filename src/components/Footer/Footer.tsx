@@ -15,7 +15,7 @@ const StyledFooter = styled.footer`
   align-items: center;
   display: flex;
   justify-content: center;
-  background-color: #241460;
+  background-color: #153e90;
 `
 const StyledFooterInner = styled.div`
   align-items: center;
@@ -24,7 +24,7 @@ const StyledFooterInner = styled.div`
   height: ${props => props.theme.topBarSize}px;
   max-width: ${props => props.theme.siteWidth}px;
   width: 100%;
-  background-color: #241460;  
+  background-color: #153e90;  
 `
 
 export default Footer

@@ -188,7 +188,7 @@ const StyledWrapper = styled.div`
 const Styledimg = styled.div`
   padding-left:20px;
   position: relative;  
-  margin-right: 35px;
+  margin-right: 45px;
 `
 
 const StyledBalance = styled.div`
@@ -221,7 +221,9 @@ const StyledCardWrapper = styled.div`
   display: flex;
   width: calc((900px - ${(props) => props.theme.spacing[4]}px * 2) / 3);
   position: relative;
-  font-color: ${(props) => props.theme.color.grey[900]};
+  color: #06f74f;
+  font-size:20px;
+  font-weight:700;
 `
 
 export default Subpage11

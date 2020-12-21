@@ -43,10 +43,10 @@ const App: React.FC = () => {
           <Route path="/Tokenomics">
             <Tokenomics />
           </Route>
-          <Route path="/Stakings">
+          <Route path="/Farm">
             <Stakings />
           </Route>
-          <Route path="/infos">
+          <Route path="/Info">
             <Infos />
           </Route>
         </Switch>

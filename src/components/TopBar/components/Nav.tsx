@@ -8,15 +8,15 @@ const Nav: React.FC = () => {
       <StyledLink exact activeClassName="active" to="/">
         HOME
       </StyledLink>
+      <StyledLink exact activeClassName="active" to="/Farm">
+        FARM
+      </StyledLink>
+      <StyledLink exact activeClassName="active" to="/Info">
+        INFO
+      </StyledLink>
       <StyledLink exact activeClassName="active" to="/TOKENOMICS">
         TOKENOMICS
-      </StyledLink>
-      <StyledLink exact activeClassName="active" to="/Infos">
-        INFO
-      </StyledLink> 
-      <StyledLink exact activeClassName="active" to="/Stakings">
-        FARM
-      </StyledLink>      
+      </StyledLink>                  
       <StyledAbsoluteLink
         href="https://app.uniswap.org/#/swap"
         target="_blank"
@@ -50,7 +50,7 @@ const StyledLink = styled(NavLink)`
     color: #f0e64d;
   }
   &.active {
-    color: #1cba2f;
+    color: #06f74f;
   }
   @media (max-width: 400px) {
     padding-left: ${(props) => props.theme.spacing[2]}px;

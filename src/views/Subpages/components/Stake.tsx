@@ -3,12 +3,12 @@ import React, { useCallback, useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { Contract } from 'web3-eth-contract'
 import Button from '../../../components/Button'
-import Card from '../../../components/Card'
+import FirstCard from '../../../components/FirstCard'
 import CardContent from '../../../components/CardContent'
 import SmallCardIcon from '../../../components/SmallCardIcon'
-import Label from '../../../components/Label'
+import FirstLabel from '../../../components/FirstLabel'
 import Spacer from '../../../components/Spacer'
-import Value from '../../../components/Value'
+import FirstValue from '../../../components/FirstValue'
 import useAllowance from '../../../hooks/useAllowance'
 import useApprove from '../../../hooks/useApprove'
 import useModal from '../../../hooks/useModal'
@@ -72,13 +72,13 @@ const Stake: React.FC<StakeProps> = ({ lpContract, pid, tokenName }) => {
 
    
   return (
-    <Card>
+    <FirstCard>
       <CardContent>
         <StyledCardContentInner>
           <StyledCardHeader>
             <SmallCardIcon><img src={chef} height="32" style={{ marginTop: 0 }} /> </SmallCardIcon>
-            <Value value={getBalanceNumber(stakedBalance)} />
-            <Label text={`${tokenName} Staked`} />
+            <FirstValue value={getBalanceNumber(stakedBalance)} />
+            <FirstLabel text={`${tokenName} Staked`} />
             <Label1></Label1>          
           </StyledCardHeader>
           <StyledCardActions>
@@ -105,7 +105,7 @@ const Stake: React.FC<StakeProps> = ({ lpContract, pid, tokenName }) => {
           </StyledCardActions>
         </StyledCardContentInner>
       </CardContent>
-    </Card>
+    </FirstCard>
   )
 }  
 
@@ -118,7 +118,7 @@ const StyledCardActions = styled.div`
   display: flex;
   justify-content: center;
   margin-top: ${(props) => props.theme.spacing[8]}px;
-  width: 100%;
+  width: 110%;
 `
 const StyledCardContentInner = styled.div`
   align-items: center;

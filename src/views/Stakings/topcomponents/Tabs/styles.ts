@@ -43,7 +43,7 @@ export const Button = styled.button`
 
     opacity: 0.5;
 
-    background-color: #f2ec48;
+    background-color: #edece1;
     transition: 0.4s;
   }
 
@@ -81,10 +81,20 @@ export const Section = styled.section`
 
 export const Footnote = styled.div`
   font-family: 'Arial-Rounded', sans-serif;
-  font-size: 25px;
+  font-size: 30px;
   padding: 8px 20px;
   margin-top: 20px;
   text-align: center;
   font-weight: 700;
-  color: ${(props) => props.theme.color.grey[900]};  
+  color: #06f74f;
+`
+
+export const Footnotetitle = styled.div`
+  font-family: 'Arial-Rounded', sans-serif;
+  font-size: 30px;
+  padding: 8px 20px;
+  margin-top: 20px;
+  text-align: center;
+  font-weight: 700;
+  color: #ffffff;
 `

@@ -22,7 +22,7 @@ const useAllEarnings = () => {
         getEarned(masterChefContract, pid, account),
       ),
     )
-    setBalance(balances)
+    setBalance(balances)   
   }, [account, masterChefContract, brrr])
 
   useEffect(() => {
