@@ -1,7 +1,7 @@
 import BigNumber from 'bignumber.js/bignumber'
 import ERC20Abi from './abi/erc20.json'
 import MasterChefAbi from './abi/masterchef.json'
-import CropsAbi from './abi/crops.json'
+import BrrrAbi from './abi/brrr.json'
 import UNIV2PairAbi from './abi/uni_v2_lp.json'
 import WETHAbi from './abi/weth.json'
 import {
@@ -21,7 +21,7 @@ export class Contracts {
     this.defaultGas = options.defaultGas
     this.defaultGasPrice = options.defaultGasPrice
 
-    this.crops = new this.web3.eth.Contract(CropsAbi)
+    this.brrr = new this.web3.eth.Contract(BrrrAbi)
     this.masterChef = new this.web3.eth.Contract(MasterChefAbi)
 
     this.weth = new this.web3.eth.Contract(WETHAbi)
@@ -46,7 +46,7 @@ export class Contracts {
       else console.error('Contract address not found in network', networkId)
     }
 
-    setProvider(this.crops, contractAddresses.crops[networkId])
+    setProvider(this.brrr, contractAddresses.brrr[networkId])
     setProvider(this.masterChef, contractAddresses.masterChef[networkId])
     setProvider(this.weth, contractAddresses.weth[networkId])
 
@@ -59,7 +59,7 @@ export class Contracts {
   }
 
   setDefaultAccount(account) {
-    this.crops.options.from = account
+    this.brrr.options.from = account
     this.masterChef.options.from = account
   }
 

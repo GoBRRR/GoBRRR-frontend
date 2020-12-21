@@ -1,7 +1,7 @@
 import { useCallback } from 'react'
 import { useWallet } from 'use-wallet'
 import { Contract } from 'web3-eth-contract'
-import { redeem } from '../crops/utils'
+import { redeem } from '../brrr/utils'
 
 const useRedeem = (masterChefContract: Contract) => {
   const { account } = useWallet()

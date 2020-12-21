@@ -5,31 +5,31 @@ import styled from 'styled-components'
 import { useWallet } from 'use-wallet'
 import Label from '../../components/Label'
 import Spacer from '../../components/Spacer'
-import ChangedCropsIcon from '../../components/ChangedCropsIcon'
+import ChangedBrrrIcon from '../../components/ChangedBrrrIcon'
 import useAllEarnings from '../../hooks/useAllEarnings'
 import useAllStakedValue from '../../hooks/useAllStakedValue'
 import useFarms from '../../hooks/useFarms'
 import useTokenBalance from '../../hooks/useTokenBalance'
-import useCrops from '../../hooks/useCrops'
-import { getCropsAddress, getCropsSupply } from '../../crops/utils'
+import useBrrr from '../../hooks/useBrrr'
+import { getBrrrAddress, getBrrrSupply } from '../../brrr/utils'
 import { getBalanceNumber } from '../../utils/formatBalance'
 
 
 const Subpage01: React.FC = () => {
   const [totalSupply, setTotalSupply] = useState<BigNumber>()
-  const crops = useCrops()
-  const cropsBalance = useTokenBalance(getCropsAddress(crops))
+  const brrr = useBrrr()
+  const brrrBalance = useTokenBalance(getBrrrAddress(brrr))
   const { account, ethereum }: { account: any; ethereum: any } = useWallet()
 
   useEffect(() => {
     async function fetchTotalSupply() {
-      const supply = await getCropsSupply(crops)
+      const supply = await getBrrrSupply(brrr)
       setTotalSupply(supply)
     }
-    if (crops) {
+    if (brrr) {
       fetchTotalSupply()
     }
-  }, [crops, setTotalSupply])
+  }, [brrr, setTotalSupply])
 
   return (
     <StyledWrapper>
@@ -37,12 +37,15 @@ const Subpage01: React.FC = () => {
       </StyledbrWrapper>
 
       <StyledBalance>
-        <ChangedCropsIcon />
+        <ChangedBrrrIcon />
         <Spacer />
         <div style={{ flex: 1 }}>
           <StyledValue>
-            {!!account ? getBalanceNumber(cropsBalance)+"  BRRR" : 'Locked'}
+            {!!account ? getBalanceNumber(brrrBalance) : 'Locked'}
           </StyledValue>
+          <StyledValueBelow>
+            BRRR
+          </StyledValueBelow>
         </div>
       </StyledBalance>
 
@@ -90,6 +93,13 @@ const StyledValue = styled.div`
   font-size: 20px;
   font-weight: 800;
   padding-top: 30px;
+  color: #ffffff;
+`
+const StyledValueBelow = styled.div`
+  font-family: 'Arial-Rounded', sans-serif;
+  color: ${(props) => props.theme.color.grey[600]};
+  font-size: 20px;
+  font-weight: 800;
   padding-bottom: 15px;
   color: #e2ee2a;
 `

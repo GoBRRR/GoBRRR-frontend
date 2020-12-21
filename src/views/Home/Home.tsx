@@ -1,25 +1,35 @@
 import React from 'react'
 import styled from 'styled-components'
-//import chef from '../../assets/img/MEM-FEDERAL-RESSEVA-1-1.gif'
-import chef from '../../assets/img/head.png'
+import chef from '../../assets/img/ani.gif'
 import Container from '../../components/Container'
 import Page from '../../components/Page'
-import PageHeader from '../../components/PageHeader'
+import HomePageHeader from '../../components/HomePageHeader'
 import Spacer from '../../components/Spacer'
 import Balances from './components/Balances'
 
 const Home: React.FC = () => {
   return (
     <Page>
-      <PageHeader
-        //icon={<img width={600} height={500} src={chef} />}
-        icon={<img height={120} src={chef} />}
+      <HomePageHeader        
         title="Welcome to GoBRRR"
         subtitle="Stake Uniswap LP Tokens to Claim BRRR"
       />
       <Container>
+      <div
+            style={{
+              alignItems: 'center',
+              display: 'flex',
+              flex: 1,
+              marginBottom: 30,
+              justifyContent: 'center',
+            }}
+          >
+        <img src={chef} height={500} width={600} />
+        </div>
+      </Container>
+      <Container>
         <Balances />
-      </Container>      
+      </Container>     
       <Spacer size="lg" />      
       <Spacer size="lg" />
       <div

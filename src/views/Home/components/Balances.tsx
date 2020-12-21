@@ -8,13 +8,13 @@ import CardContent from '../../../components/CardContent'
 import Label from '../../../components/Label'
 import Spacer from '../../../components/Spacer'
 import Value from '../../../components/Value'
-import ChangedCropsIcon from '../../../components/ChangedCropsIcon'
+import ChangedBrrrIcon from '../../../components/ChangedBrrrIcon'
 import useAllEarnings from '../../../hooks/useAllEarnings'
 import useAllStakedValue from '../../../hooks/useAllStakedValue'
 import useFarms from '../../../hooks/useFarms'
 import useTokenBalance from '../../../hooks/useTokenBalance'
-import useCrops from '../../../hooks/useCrops'
-import { getCropsAddress, getCropsSupply } from '../../../crops/utils'
+import useBrrr from '../../../hooks/useBrrr'
+import { getBrrrAddress, getBrrrSupply } from '../../../brrr/utils'
 import { getBalanceNumber } from '../../../utils/formatBalance'
 
 const PendingRewards: React.FC = () => {
@@ -65,19 +65,19 @@ const PendingRewards: React.FC = () => {
 
 const Balances: React.FC = () => {
   const [totalSupply, setTotalSupply] = useState<BigNumber>()
-  const crops = useCrops()  
-  const cropsBalance = useTokenBalance(getCropsAddress(crops))
+  const brrr = useBrrr()  
+  const brrrBalance = useTokenBalance(getBrrrAddress(brrr))
   const { account, ethereum }: { account: any; ethereum: any } = useWallet()
 
   useEffect(() => {
     async function fetchTotalSupply() {
-      const supply = await getCropsSupply(crops)
+      const supply = await getBrrrSupply(brrr)
       setTotalSupply(supply)
     }
-    if (crops) {
+    if (brrr) {
       fetchTotalSupply()
     }
-  }, [crops, setTotalSupply])
+  }, [brrr, setTotalSupply])
 
   return (
     <StyledWrapper>
@@ -85,12 +85,12 @@ const Balances: React.FC = () => {
         <CardContent>
           <StyledBalances>
             <StyledBalance>
-              <ChangedCropsIcon />
+              <ChangedBrrrIcon />
               <Spacer />
               <div style={{ flex: 1 }}>
                 <Label text="Your BRRR Balance" />
                 <Value
-                  value={!!account ? getBalanceNumber(cropsBalance) : 'Locked'}
+                  value={!!account ? getBalanceNumber(brrrBalance) : 'Locked'}
                 />
               </div>
             </StyledBalance>

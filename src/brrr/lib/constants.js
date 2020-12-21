@@ -23,12 +23,12 @@ export const INTEGERS = {
 }
 
 export const contractAddresses = {
-  crops: { 
-    3: '0x155A9C142eD275A53AaEC72d1686ee1168464bD2',
+  brrr: { 
+    3: '0xd941e8fCe216Dc476Bd7235B4d9b777C1d440c50',
     //42: '0x02CECED9749cAfC8473468a51F9BE0b61a2a0542',
   },
   masterChef: {
-    3: '0x860Be82626aB337Ab5B773e79B610BCF8E9bB6b4',
+    3: '0x0Cbbe6EA2039f06B846F4b4d0D058efB7864071f',
     //42: '0xEFa7b6952535b70807ce012D19D13d18970Bb58d',
   },  
   weth: {
@@ -46,11 +46,11 @@ export const supportedPools = [
   {
     pid: 0,
     lpAddresses: {
-      3:'0x6211a5917e5ba5ff00d071bbf91b0fa32498260d',
+      3:'0x7431c46193947afb23b5c195bb4700ca6d45727a',
       //42: '0x85b92eb6c67789f60a1b6b0d934196a2c35aa46f',
     },
     tokenAddresses: {
-      3:'0x155A9C142eD275A53AaEC72d1686ee1168464bD2',
+      3:'0xd941e8fCe216Dc476Bd7235B4d9b777C1d440c50',
       //42: '0x02CECED9749cAfC8473468a51F9BE0b61a2a0542',
     },
     name: 'BRRR-ETH',
@@ -62,11 +62,11 @@ export const supportedPools = [
   {
     pid: 1,
     lpAddresses: {
-      3:'0x076b869e15b6ab2e836453562f89bca5c89e641a',
+      3:'0x59ce25532f7a2b6f97f26536a3ef651912b35067',
       //42: '0x85b92eb6c67789f60a1b6b0d934196a2c35aa46f',
     },
     tokenAddresses: {
-      3:'0x155A9C142eD275A53AaEC72d1686ee1168464bD2',
+      3:'0xd941e8fCe216Dc476Bd7235B4d9b777C1d440c50',
       //42: '0x02CECED9749cAfC8473468a51F9BE0b61a2a0542',
     },
     name: 'BRRR-UNI',
@@ -77,11 +77,11 @@ export const supportedPools = [
   {
     pid: 2,
     lpAddresses: {
-      3:'0xeabbcea80ce914b2d7bc36ba63ad1fa3e4a6a82a',
+      3:'0x8dd2fc86f9389086cd03aacaed6a7dabb379c954',
       //42: '0x85b92eb6c67789f60a1b6b0d934196a2c35aa46f',
     },
     tokenAddresses: {
-      3:'0x155A9C142eD275A53AaEC72d1686ee1168464bD2',
+      3:'0xd941e8fCe216Dc476Bd7235B4d9b777C1d440c50',
       //42: '0x02CECED9749cAfC8473468a51F9BE0b61a2a0542',
     },
     name: 'BRRR-DAI',
@@ -92,11 +92,11 @@ export const supportedPools = [
   {
     pid: 3,
     lpAddresses: {
-      3:'0xb30feabb329778b828798a077b0db45c51a3419f',
+      3:'0x7346d8b825cc2bc4fe62d7d554fa67c44bd4441f',
       //42: '0x85b92eb6c67789f60a1b6b0d934196a2c35aa46f',
     },
     tokenAddresses: {
-      3:'0x155A9C142eD275A53AaEC72d1686ee1168464bD2',
+      3:'0xd941e8fCe216Dc476Bd7235B4d9b777C1d440c50',
       //42: '0x02CECED9749cAfC8473468a51F9BE0b61a2a0542',
     },
     name: 'BRRR-WBTC',
@@ -107,11 +107,11 @@ export const supportedPools = [
   {
     pid: 4,
     lpAddresses: {
-      3:'0x227e4c0515239832952b56f6752a8f8cae3096fa',
+      3:'0x34fa051689deca4e6c62b5d9c01108443a35c637',
       //42: '0x66412bbbe59af66a56357fc348e3c33f1788daa3',
     },
     tokenAddresses: {
-      3:'0x155A9C142eD275A53AaEC72d1686ee1168464bD2',
+      3:'0xd941e8fCe216Dc476Bd7235B4d9b777C1d440c50',
       //42: '0x02CECED9749cAfC8473468a51F9BE0b61a2a0542',
     },
     name: 'BRRR-USDC',

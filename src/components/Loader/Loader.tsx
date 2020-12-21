@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components'
-import CropsIcon from '../CropsIcon'
+import BrrrIcon from '../BrrrIcon'
 
 import CardIcon from '../CardIcon'
 
@@ -12,7 +12,7 @@ const Loader: React.FC<LoaderProps> = ({ text }) => {
   return (
     <StyledLoader>
       <CardIcon>
-        <StyledCrops><CropsIcon /></StyledCrops>
+        <StyledBrrr><BrrrIcon /></StyledBrrr>
       </CardIcon>
       {!!text && <StyledText>{text}</StyledText>}
     </StyledLoader>
@@ -35,7 +35,7 @@ const StyledLoader = styled.div`
   justify-content: center;
 `
 
-const StyledCrops = styled.div`
+const StyledBrrr = styled.div`
   font-size: 32px;
   position: relative;
   animation: 1s ${spin} infinite;

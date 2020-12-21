@@ -13,27 +13,27 @@ const GAS_LIMIT = {
   },
 }
 
-export const getMasterChefAddress = (crops) => {
-  return crops && crops.masterChefAddress
+export const getMasterChefAddress = (brrr) => {
+  return brrr && brrr.masterChefAddress
 }
-export const getCrops = (crops) => {
-  return crops && crops.contracts
+export const getBrrr = (brrr) => {
+  return brrr && brrr.contracts
 }
-export const getCropsAddress = (crops) => {                                           
-  return crops && crops.cropsAddress
+export const getBrrrAddress = (brrr) => {                                           
+  return brrr && brrr.brrrAddress
 }
-export const getWethContract = (crops) => {
-  return crops && crops.contracts && crops.contracts.weth
+export const getWethContract = (brrr) => {
+  return brrr && brrr.contracts && brrr.contracts.weth
 }
-export const getMasterChefContract = (crops) => {
-  return crops && crops.contracts && crops.contracts.masterChef
+export const getMasterChefContract = (brrr) => {
+  return brrr && brrr.contracts && brrr.contracts.masterChef
 }
-export const getCropsContract = (crops) => {
-  return crops && crops.contracts && crops.contracts.crops
+export const getBrrrContract = (brrr) => {
+  return brrr && brrr.contracts && brrr.contracts.brrr
 }
-export const getFarms = (crops) => {
-  return crops
-    ? crops.contracts.pools.map(
+export const getFarms = (brrr) => {
+  return brrr
+    ? brrr.contracts.pools.map(
         ({
           pid,
           name,
@@ -54,8 +54,8 @@ export const getFarms = (crops) => {
           tokenAddress,
           tokenSymbol,
           tokenContract,
-          earnToken: 'crops',
-          earnTokenAddress: crops.contracts.crops.options.address,
+          earnToken: 'brrr',
+          earnTokenAddress: brrr.contracts.brrr.options.address,
           icon,
         }),
       )
@@ -71,7 +71,7 @@ export const getPoolWeight = async (masterChefContract, pid) => {
 }
 
 export const getEarned = async (masterChefContract, pid, account) => {  
-  return masterChefContract.methods.pendingCrops(pid, account).call()
+  return masterChefContract.methods.pendingBrrr(pid, account).call()
 }
 
 export const getTotalLPWethValue = async (
@@ -93,9 +93,11 @@ export const getTotalLPWethValue = async (
   // Convert that into the portion of total lpContract = p1
   const totalSupply = await lpContract.methods.totalSupply().call()
   // Get total weth value for the lpContract = w1
+ 
   const lpContractWeth = await wethContract.methods
-    .balanceOf(lpContract.options.address)
-    .call()
+  .balanceOf(lpContract.options.address)
+  .call()
+   
   // Return p1 * w1 * 2
   const portionLp = new BigNumber(balance).div(new BigNumber(totalSupply))
   const lpWethWorth = new BigNumber(lpContractWeth)
@@ -126,8 +128,8 @@ export const approve = async (lpContract, masterChefContract, account) => {
     .send({ from: account })
 }
 
-export const getCropsSupply = async (crops) => {
-  return new BigNumber(await crops.contracts.crops.methods.totalSupply().call())
+export const getBrrrSupply = async (brrr) => {
+  return new BigNumber(await brrr.contracts.brrr.methods.totalSupply().call())
 }
 
 export const stake = async (masterChefContract, pid, amount, account) => {

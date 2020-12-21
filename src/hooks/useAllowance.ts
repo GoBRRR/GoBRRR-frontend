@@ -1,19 +1,19 @@
 import { useCallback, useEffect, useState } from 'react'
 
 import BigNumber from 'bignumber.js'
-import useCrops from './useCrops'
+import useBrrr from './useBrrr'
 import { useWallet } from 'use-wallet'
 import { provider } from 'web3-core'
 import { Contract } from 'web3-eth-contract'
 
 import { getAllowance } from '../utils/erc20'
-import { getMasterChefContract } from '../crops/utils'
+import { getMasterChefContract } from '../brrr/utils'
 
 const useAllowance = (lpContract: Contract) => {
   const [allowance, setAllowance] = useState(new BigNumber(0))
   const { account }: { account: string; ethereum: provider } = useWallet()
-  const crops = useCrops()
-  const masterChefContract = getMasterChefContract(crops)
+  const brrr = useBrrr()
+  const masterChefContract = getMasterChefContract(brrr)
 
   const fetchAllowance = useCallback(async () => {
     const allowance = await getAllowance(

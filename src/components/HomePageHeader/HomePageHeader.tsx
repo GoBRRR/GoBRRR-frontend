@@ -1,31 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
-
 import Container from '../Container'
-import brocoli from '../../assets/img/brocoli.jpg'
-import carrot from '../../assets/img/carrot.png'
 
-interface PageHeaderProps {
-  icon: React.ReactNode
+interface HomePageHeaderProps {
   subtitle?: string
   title?: string
 }
 
-const PageHeader: React.FC<PageHeaderProps> = ({ icon, subtitle, title }) => {
-  
-  return (
+const HomePageHeader: React.FC<HomePageHeaderProps> = ({ subtitle, title }) => {
+    return (
     <Container size="sm">
       <StyledPageHeader>
-        <StyledTitle>{title}</StyledTitle>
-        <StyledIcon>            
-          {icon}
-        </StyledIcon>
+        <StyledTitle>{title}</StyledTitle>        
         <StyledSubtitle>{subtitle}</StyledSubtitle>
       </StyledPageHeader>
     </Container>
   ) 
 }
-
 
 
 const StyledPageHeader = styled.div`
@@ -38,14 +29,6 @@ const StyledPageHeader = styled.div`
   margin: 0 auto;
 `
 
-const StyledIcon = styled.div`
-  font-size: 120px;
-  height: 120px;
-  line-height: 120px;
-  text-align: center;
-  width: 120px;
-`
-
 const StyledTitle = styled.h1`
   font-family: 'Arial-Rounded', sans-serif;
   color: ${(props) => props.theme.color.grey[600]};
@@ -53,10 +36,11 @@ const StyledTitle = styled.h1`
   font-weight: 700;
   margin: 0;
   padding: 0;
+  color: #2ac158;
 `
 
 const StyledSubtitle = styled.h3`
-  color: ${(props) => props.theme.color.grey[600]};
+  color: #fff;
   font-size: 25px;
   font-weight: 600;
   margin: 0;
@@ -65,4 +49,4 @@ const StyledSubtitle = styled.h3`
   text-align: center;
 `
 
-export default PageHeader
+export default HomePageHeader

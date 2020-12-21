@@ -1,5 +1,5 @@
 import React from 'react'
-import brrrusdccapy from '../../assets/img/pool5.png'
+import brrrusdcapy from '../../assets/img/pool5.png'
 
 interface BrrrusdcapyProps {
   size?: number
@@ -10,7 +10,7 @@ interface BrrrusdcapyProps {
 
 const Brrrusdcapy: React.FC<BrrrusdcapyProps> = ({ size = 36, v1, v2, v3 }) => (
 
-  <img src={brrrusdccapy} height="300" style={{ marginTop: 0 }} />  
+  <img src={brrrusdcapy} height="300" style={{ marginTop: 0 }} />  
   
 )
 

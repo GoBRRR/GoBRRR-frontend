@@ -1,16 +1,16 @@
 import { useCallback } from 'react'
 
-import useCrops from './useCrops'
+import useBrrr from './useBrrr'
 import { useWallet } from 'use-wallet'
 import { provider } from 'web3-core'
 import { Contract } from 'web3-eth-contract'
 
-import { approve, getMasterChefContract } from '../crops/utils'
+import { approve, getMasterChefContract } from '../brrr/utils'
 
 const useApprove = (lpContract: Contract) => {
   const { account }: { account: string; ethereum: provider } = useWallet()
-  const crops = useCrops()
-  const masterChefContract = getMasterChefContract(crops)
+  const brrr = useBrrr()
+  const masterChefContract = getMasterChefContract(brrr)
   
   const handleApprove = useCallback(async () => {
     try {

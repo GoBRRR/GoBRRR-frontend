@@ -28,7 +28,7 @@ const DisclaimerModal: React.FC<DisclaimerModal> = ({
         <div>
           <p>Audits: None.</p>
           <p>
-            While the initial creators of the Crops protocol have made
+            While the initial creators of the Brrr protocol have made
             reasonable efforts to attempt to ensure the security of the
             contracts, including forking much of the codebase from existing
             well-audited projects and soliciting review from friends, nothing
@@ -44,9 +44,9 @@ const DisclaimerModal: React.FC<DisclaimerModal> = ({
     } else {
       return (
         <div>
-          <p>Attention CROPS Uniswap LPs</p>
+          <p>Attention BRRR Uniswap LPs</p>
           <p>
-            The only Uniswap pool that is compatible with CROPS is CROPS/yCRV
+            The only Uniswap pool that is compatible with BRRR is BRRR/yCRV
             (Curve yPool tokens)
           </p>
           <p>Providing liquidity for other Uniswap pools is dangerous</p>

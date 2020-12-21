@@ -6,7 +6,7 @@ import { UseWalletProvider } from 'use-wallet'
 //import FarmsProvider from './contexts/Farms'
 import ModalsProvider from './contexts/Modals'
 import TransactionProvider from './contexts/Transactions'
-import CropsProvider from './contexts/CropsProvider'
+import BrrrProvider from './contexts/BrrrProvider'
 import FarmsProvider from './contexts/Farms'
 import theme from './theme'
 
@@ -68,13 +68,13 @@ const Providers: React.FC = ({ children }) => {
         //  walletconnect: { rpcUrl: 'https://kovan.infura.io/v3/8f3443d966884c7288b940947b5c37c1' },         
         //}}
       >
-        <CropsProvider>
+        <BrrrProvider>
           <TransactionProvider>
             <FarmsProvider>
               <ModalsProvider>{children}</ModalsProvider>
             </FarmsProvider>
           </TransactionProvider>
-        </CropsProvider>
+        </BrrrProvider>
       </UseWalletProvider>
     </ThemeProvider>
   )

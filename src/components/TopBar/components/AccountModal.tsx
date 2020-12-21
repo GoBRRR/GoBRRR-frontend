@@ -2,8 +2,8 @@ import React, { useCallback } from 'react'
 import styled from 'styled-components'
 import { useWallet } from 'use-wallet'
 import useTokenBalance from '../../../hooks/useTokenBalance'
-import useCrops from '../../../hooks/useCrops'
-import { getCropsAddress } from '../../../crops/utils'
+import useBrrr from '../../../hooks/useBrrr'
+import { getBrrrAddress } from '../../../brrr/utils'
 import { getBalanceNumber } from '../../../utils/formatBalance'
 import Button from '../../Button'
 import CardIcon from '../../CardIcon'
@@ -14,7 +14,7 @@ import ModalContent from '../../ModalContent'
 import ModalTitle from '../../ModalTitle'
 import Spacer from '../../Spacer'
 import Value from '../../Value'
-import ChangedCropsIcon from '../../../components/ChangedCropsIcon'
+import ChangedBrrrIcon from '../../ChangedBrrrIcon'
 
 const AccountModal: React.FC<ModalProps> = ({ onDismiss }) => {
   const { account, reset } = useWallet()
@@ -24,8 +24,8 @@ const AccountModal: React.FC<ModalProps> = ({ onDismiss }) => {
     reset()
   }, [onDismiss, reset])
 
-  const crops = useCrops()
-  const cropsBalance = useTokenBalance(getCropsAddress(crops))
+  const brrr = useBrrr()
+  const brrrBalance = useTokenBalance(getBrrrAddress(brrr))
 
   return (
     <Modal>
@@ -36,11 +36,11 @@ const AccountModal: React.FC<ModalProps> = ({ onDismiss }) => {
         <div style={{ display: 'flex' }}>
           <StyledBalanceWrapper>
             <CardIcon>
-              <ChangedCropsIcon />
+              <ChangedBrrrIcon />
             </CardIcon>
             <StyledBalance>
-              <Value value={getBalanceNumber(cropsBalance)} />
-              <Label text="CROPS Balance" />
+              <Value value={getBalanceNumber(brrrBalance)} />
+              <Label text="BRRR Balance" />
             </StyledBalance>
           </StyledBalanceWrapper>
         </div>

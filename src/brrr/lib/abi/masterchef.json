@@ -3,7 +3,7 @@
 		"inputs": [
 			{
 				"internalType": "contract GoBrrrToken",
-				"name": "_crops",
+				"name": "_brrr",
 				"type": "address"
 			},
 			{
@@ -13,7 +13,7 @@
 			},
 			{
 				"internalType": "uint256",
-				"name": "_cropsPerBlock",
+				"name": "_brrrPerBlock",
 				"type": "uint256"
 			},
 			{
@@ -232,14 +232,33 @@
 	},
 	{
 		"inputs": [],
-		"name": "addEthReward",
-		"outputs": [],
-		"stateMutability": "payable",
+		"name": "bonusEndBlock",
+		"outputs": [
+			{
+				"internalType": "uint256",
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"stateMutability": "view",
 		"type": "function"
 	},
 	{
 		"inputs": [],
-		"name": "bonusEndBlock",
+		"name": "brrr",
+		"outputs": [
+			{
+				"internalType": "contract GoBrrrToken",
+				"name": "",
+				"type": "address"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "brrrPerBlock",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -287,32 +306,6 @@
 		"name": "changetransBurnrate",
 		"outputs": [],
 		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "crops",
-		"outputs": [
-			{
-				"internalType": "contract GoBrrrToken",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "cropsPerBlock",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
 		"type": "function"
 	},
 	{
@@ -429,7 +422,7 @@
 				"type": "address"
 			}
 		],
-		"name": "pendingCrops",
+		"name": "pendingBrrr",
 		"outputs": [
 			{
 				"internalType": "uint256",
@@ -467,7 +460,7 @@
 			},
 			{
 				"internalType": "uint256",
-				"name": "accCropsPerShare",
+				"name": "accBrrrPerShare",
 				"type": "uint256"
 			}
 		],
@@ -570,19 +563,6 @@
 		"type": "function"
 	},
 	{
-		"inputs": [],
-		"name": "uniswapRouter",
-		"outputs": [
-			{
-				"internalType": "contract IUniswapV2Router02",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
 		"inputs": [
 			{
 				"internalType": "uint256",
@@ -625,19 +605,6 @@
 		"type": "function"
 	},
 	{
-		"inputs": [],
-		"name": "weth",
-		"outputs": [
-			{
-				"internalType": "contract IERC20",
-				"name": "",
-				"type": "address"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
 		"inputs": [
 			{
 				"internalType": "uint256",
@@ -658,19 +625,6 @@
 	{
 		"inputs": [],
 		"name": "withdrawlFee",
-		"outputs": [
-			{
-				"internalType": "uint256",
-				"name": "",
-				"type": "uint256"
-			}
-		],
-		"stateMutability": "view",
-		"type": "function"
-	},
-	{
-		"inputs": [],
-		"name": "withdrawlFeeConvertToBrrrAmount",
 		"outputs": [
 			{
 				"internalType": "uint256",

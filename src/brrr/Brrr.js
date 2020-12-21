@@ -5,7 +5,7 @@ import { Account } from './lib/accounts.js'
 import { EVM } from './lib/evm.js'
 import { contractAddresses } from './lib/constants'
 
-export class Crops {
+export class Brrr {
     constructor(provider, networkId, testing, options) {
 
         var realProvider
@@ -38,7 +38,7 @@ export class Crops {
         }
 
         this.contracts = new Contracts(realProvider, networkId, this.web3, options)
-        this.cropsAddress = contractAddresses.crops[networkId]
+        this.brrrAddress = contractAddresses.brrr[networkId]
         this.masterChefAddress = contractAddresses.masterChef[networkId]
         this.wethAddress = contractAddresses.weth[networkId]
     }

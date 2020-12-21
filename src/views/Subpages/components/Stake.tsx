@@ -70,39 +70,7 @@ const Stake: React.FC<StakeProps> = ({ lpContract, pid, tokenName }) => {
 
   }, [onApprove, setRequestedApproval])
 
-  const [timeStatus, setTimeStatus] = useState(true)
-
-  useEffect(() => {
-    getTimeStatus()
-  }, [])
-
-  const calculateTimeLeft = () => {
-    var date = new Date();
-    var dt = date.getTime() / 1000;
-    var delay_date = 0;
-
-    if (pid === 1 || pid === 5)
-      delay_date = 24*3600*1000;
-    else if (pid === 2 || pid === 6)
-      delay_date = 3 * 24 * 3600 * 1000;
-    else if (pid === 3 || pid === 7)
-      delay_date = 7 * 24 * 3600 * 1000;
-    const localStorageTime = localStorage.getItem('myValueInLocalStorage' + pid)
-    var difference = delay_date - Math.round(dt - Number(localStorageTime))* 1000;
-    // difference = 0
-
-    if (difference > 0) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-
-  const getTimeStatus = () => {
-    setTimeStatus(!stakedBalance.eq(new BigNumber(0)) && calculateTimeLeft());
-  }
- 
-
+   
   return (
     <Card>
       <CardContent>
@@ -128,8 +96,7 @@ const Stake: React.FC<StakeProps> = ({ lpContract, pid, tokenName }) => {
                   onClick={onPresentWithdraw}
                 />
                 <Spacer/>
-                <Button 
-                  disabled={calculateTimeLeft()}
+                <Button                  
                   text="Stake"
                   onClick={onPresentDeposit}>
                 </Button>
@@ -153,8 +120,6 @@ const StyledCardActions = styled.div`
   margin-top: ${(props) => props.theme.spacing[8]}px;
   width: 100%;
 `
-
-
 const StyledCardContentInner = styled.div`
   align-items: center;
   display: flex;
@@ -162,12 +127,10 @@ const StyledCardContentInner = styled.div`
   flex-direction: column;
   justify-content: space-between;
 `
-
 const Label1 = styled.div` 
   color: ${(props) => props.theme.color.grey[600]};
   font-size: 15px;
   font-weight: 600;
   margin-top: ${(props) => props.theme.spacing[3]}px;
 `
-
 export default Stake

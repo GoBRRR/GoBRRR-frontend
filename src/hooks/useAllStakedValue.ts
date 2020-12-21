@@ -10,8 +10,8 @@ import {
   getWethContract,
   getFarms,
   getTotalLPWethValue,
-} from '../crops/utils'
-import useCrops from './useCrops'
+} from '../brrr/utils'
+import useBrrr from './useBrrr'
 import useBlock from './useBlock'
 
 export interface StakedValue {
@@ -26,10 +26,10 @@ export interface StakedValue {
 const useAllStakedValue = () => {
   const [balances, setBalance] = useState([] as Array<StakedValue>)
   const { account }: { account: string; ethereum: provider } = useWallet()
-  const crops = useCrops()
-  const farms = getFarms(crops)
-  const masterChefContract = getMasterChefContract(crops)
-  const wethContact = getWethContract(crops)
+  const brrr = useBrrr()
+  const farms = getFarms(brrr)
+  const masterChefContract = getMasterChefContract(brrr)
+  const wethContact = getWethContract(brrr)
   const block = useBlock()
 
   const fetchAllStakedValue = useCallback(async () => {
@@ -58,13 +58,13 @@ const useAllStakedValue = () => {
     //console.log("xxxwethContact:",wethContact)
 
     setBalance(balances)
-  }, [account, masterChefContract, crops])
+  }, [account, masterChefContract, brrr])
 
   useEffect(() => {
-    if (account && masterChefContract && crops) {
+    if (account && masterChefContract && brrr) {
       fetchAllStakedValue()
     }
-  }, [account, block, masterChefContract, setBalance, crops])
+  }, [account, block, masterChefContract, setBalance, brrr])
 
   return balances
 }

@@ -1,20 +1,20 @@
 import { useCallback, useEffect, useState } from 'react'
 import { useWallet } from 'use-wallet'
 import { provider } from 'web3-core'
-import useCrops from './useCrops'
+import useBrrr from './useBrrr'
 
-import { totalBurn, getMasterChefContract } from '../crops/utils'
+import { totalBurn, getMasterChefContract } from '../brrr/utils'
 
 const useTotalBurn = () => {
 
 const { account } = useWallet()
 
-  const crops = useCrops()
-  const masterChefContract = getMasterChefContract(crops)
+  const brrr = useBrrr()
+  const masterChefContract = getMasterChefContract(brrr)
 
   const state = useCallback(async () => {
     const success = await totalBurn(masterChefContract, account)    
-  }, [crops])
+  }, [brrr])
 
   return { onSuccess: state }
 }

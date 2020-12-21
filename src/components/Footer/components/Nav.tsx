@@ -31,10 +31,11 @@ const Nav: React.FC = () => {
         |
       </StyledLink>
       <StyledLink
-        href="https://gobrrr.medium.com"
+        href="https://github.com/GoBRRR"
         target="_blank"
       >
-        MEDIUM
+        GITHUB
+
       </StyledLink>
     </StyledNav>
   )
@@ -43,12 +44,12 @@ const Nav: React.FC = () => {
 const StyledNav = styled.nav`
   align-items: center;
   display: flex;
-  background-color: #11236d;
+  background-color: #241460;
 `
 const Styledlayout = styled.nav`
   display: flex;
   padding-right: ${(props) => props.theme.spacing[40]}px;
-  color: ${(props) => props.theme.color.grey[400]};
+  color: ${(props) => props.theme.color.grey[900]};
 `
 
 

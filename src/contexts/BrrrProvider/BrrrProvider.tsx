@@ -2,35 +2,35 @@ import React, { createContext, useEffect, useState } from 'react'
 
 import { useWallet } from 'use-wallet'
 
-import { Crops } from '../../crops'
+import { Brrr } from '../../brrr'
 
-export interface CropsContext {
-  crops?: typeof Crops
+export interface BrrrContext {
+  brrr?: typeof Brrr
 }
 
-export const Context = createContext<CropsContext>({
-  crops: undefined,
+export const Context = createContext<BrrrContext>({
+  brrr: undefined,
 })
 
 declare global {
   interface Window {
-    cropssauce: any
+    brrrsauce: any
   }
 }
 
-const CropsProvider: React.FC = ({ children }) => {
+const BrrrProvider: React.FC = ({ children }) => {
   const { ethereum }: { ethereum: any } = useWallet()
-  const [crops, setCrops] = useState<any>()
+  const [brrr, setBrrr] = useState<any>()
 
   // @ts-ignore
-  window.crops = crops
+  window.brrr = brrr
   // @ts-ignore
   window.eth = ethereum
 
   useEffect(() => {
     if (ethereum) {
       const chainId = Number(ethereum.chainId)
-      const cropsLib = new Crops(ethereum, chainId, false, {
+      const brrrLib = new Brrr(ethereum, chainId, false, {
         defaultAccount: ethereum.selectedAddress,
         defaultConfirmations: 1,
         autoGasMultiplier: 1.5,
@@ -40,12 +40,12 @@ const CropsProvider: React.FC = ({ children }) => {
         accounts: [],
         ethereumNodeTimeout: 10000,
       })
-      setCrops(cropsLib)
-      window.cropssauce = cropsLib
+      setBrrr(brrrLib)
+      window.brrrsauce = brrrLib
     }
   }, [ethereum])
 
-  return <Context.Provider value={{ crops }}>{children}</Context.Provider>
+  return <Context.Provider value={{ brrr }}>{children}</Context.Provider>
 }
 
-export default CropsProvider
+export default BrrrProvider

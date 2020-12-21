@@ -4,12 +4,12 @@ import styled from 'styled-components'
 import Container from '../../components/Container'
 import Spacer from '../../components/Spacer'
 import Page from '../../components/Page'
-import ChangedCropsIcon from '../../components/ChangedCropsIcon'
+import ChangedBrrrIcon from '../../components/ChangedBrrrIcon'
 import useAllEarnings from '../../hooks/useAllEarnings'
 import useAllStakedValues from '../../hooks/useAllStakedValues'
 import useTokenBalance from '../../hooks/useTokenBalance'
-import useCrops from '../../hooks/useCrops'
-import { getCropsAddress, getCropsSupply } from '../../crops/utils'
+import useBrrr from '../../hooks/useBrrr'
+import { getBrrrAddress, getBrrrSupply } from '../../brrr/utils'
 import { getBalanceNumber } from '../../utils/formatBalance'
 import { Switch } from 'react-router-dom'
 import Button from '../../components/Button'
@@ -23,8 +23,8 @@ const Balances: React.FC = () => {
   const [onPresentWalletProviderModal] = useModal(<WalletProviderModal />)
 
   const [totalSupply, setTotalSupply] = useState<BigNumber>() 
-  const crops = useCrops()
-  const cropsBalance = useTokenBalance(getCropsAddress(crops))
+  const brrr = useBrrr()
+  const brrrBalance = useTokenBalance(getBrrrAddress(brrr))
   const { account, ethereum }: { account: any; ethereum: any } = useWallet()
 
   const [start, setStart] = useState(0)
@@ -61,13 +61,13 @@ const Balances: React.FC = () => {
 
   useEffect(() => {
     async function fetchTotalSupply() {
-      const supply = await getCropsSupply(crops)
+      const supply = await getBrrrSupply(brrr)
       setTotalSupply(supply)
     }
-    if (crops) {
+    if (brrr) {
       fetchTotalSupply()
     }
-  }, [crops, setTotalSupply])
+  }, [brrr, setTotalSupply])
 
   return (
     <Switch>
@@ -86,10 +86,10 @@ const Balances: React.FC = () => {
 
               <StyledItemLayout>
                 <StyledBalances>
-                  <ChangedCropsIcon />
+                  <ChangedBrrrIcon />
                   <Spacer />          
                   <StyledValue>
-                    {!!account ? getBalanceNumber(cropsBalance)+"  BRRR" : 'Locked'}
+                    {!!account ? getBalanceNumber(brrrBalance)+"  BRRR" : 'Locked'}
                   </StyledValue> 
                 </StyledBalances>
                 <StyledSubValue>
@@ -98,7 +98,7 @@ const Balances: React.FC = () => {
               </StyledItemLayout>
               <StyledItemLayout>
                 <StyledBalances>
-                  <ChangedCropsIcon />
+                  <ChangedBrrrIcon />
                   <Spacer />          
                   <StyledValue>
                     {totalSupply ? getBalanceNumber(totalSupply)+"  BRRR" : 'Locked'}
@@ -121,7 +121,7 @@ const Balances: React.FC = () => {
 
               <StyledItemLayout>
                 <StyledBalances>
-                  <ChangedCropsIcon />
+                  <ChangedBrrrIcon />
                   <Spacer />          
                   <StyledValue>
                     {!!account ? sumStakedValue +"  LP Tokens" : 'Locked'}
@@ -134,7 +134,7 @@ const Balances: React.FC = () => {
 
               <StyledItemLayout>
                 <StyledBalances>
-                  <ChangedCropsIcon />
+                  <ChangedBrrrIcon />
                   <Spacer />          
                   <StyledValue>
                     {!!account ? sumEarning +"  BRRR" : 'Locked'}

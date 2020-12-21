@@ -6,5 +6,5 @@ BigNumber.config({
   DECIMAL_PLACES: 80,
 })
 
-export { Crops } from './Crops.js'
+export { Brrr } from './Brrr.js'
 export { Web3, BigNumber }

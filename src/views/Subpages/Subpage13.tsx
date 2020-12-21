@@ -5,8 +5,8 @@ import useAllStakedValue, {
   StakedValue,
 } from '../../hooks/useAllStakedValue'
 import Loader from '../../components/Loader'
-import useCrops from '../../hooks/useCrops'
-import { getEarned, getMasterChefContract } from '../../crops/utils'
+import useBrrr from '../../hooks/useBrrr'
+import { getEarned, getMasterChefContract } from '../../brrr/utils'
 import { bnToDec } from '../../utils'
 
 import React, { useMemo, useEffect, useState } from 'react'
@@ -36,36 +36,29 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
 
   const { account } = useWallet()
   const { lpTokenAddress } = farm
-  const crops = useCrops()
+  const brrr = useBrrr()
 
   
   useEffect(() => {
     async function fetchEarned() {
-      if (crops) return
+      if (brrr) return
       const earned = await getEarned(
-        getMasterChefContract(crops),
+        getMasterChefContract(brrr),
         lpTokenAddress,
         account,
       )
       setHarvestable(bnToDec(earned))
     }
-    if (crops && account) {
+    if (brrr && account) {
       fetchEarned()
     }
-  }, [crops, lpTokenAddress, account, setHarvestable])
+  }, [brrr, lpTokenAddress, account, setHarvestable])
 
   const poolActive = true // startTime * 1000 - Date.now() <= 0
   
   return (
     <StyledCardWrapper> 
-        {farm.apy
-          ? `${farm.apy
-              .times(new BigNumber(100))
-              .toNumber()
-              .toLocaleString('en-US')
-              .slice(0, -1)}%`
-          : 'Loading ...'}
-          APY
+        APY 15%
         <Spacer /> 
     </StyledCardWrapper>
   )
@@ -91,14 +84,14 @@ const Subpage13: React.FC = () => {
   const stakedValue = useAllStakedValue()
   //const BLOCKS_PER_YEAR = new BigNumber(2336000)
   const BLOCKS_PER_YEAR = new BigNumber(365)
-  const CROPS_PER_BLOCK = new BigNumber(1)
-  const cropsIndex = farms.findIndex(
+  const BRRR_PER_BLOCK = new BigNumber(1)
+  const brrrIndex = farms.findIndex(
     ({ tokenSymbol }) => tokenSymbol === 'DAI',
   )  
 
-  const cropsPrice =
-    cropsIndex >= 0 && stakedValue[cropsIndex]
-      ? stakedValue[cropsIndex].tokenPriceInWeth
+  const brrrPrice =
+    brrrIndex >= 0 && stakedValue[brrrIndex]
+      ? stakedValue[brrrIndex].tokenPriceInWeth
       : new BigNumber(0)
 
   //
@@ -113,8 +106,8 @@ const Subpage13: React.FC = () => {
         ...farm,
         ...stakedValue[i],
         apy: stakedValue[i]
-          ? cropsPrice
-              .times(CROPS_PER_BLOCK)
+          ? brrrPrice
+              .times(BRRR_PER_BLOCK)
               .times(BLOCKS_PER_YEAR)
               .times(stakedValue[i].poolWeight)
               .div(stakedValue[i].totalWethValue)
@@ -154,7 +147,7 @@ const Subpage13: React.FC = () => {
         <StyledBalance>
           <div style={{ flex: 1 }}>          
               <Brrrdaiapy/>          
-               <span style={{ position: "absolute", bottom: -10, left: 130}}>
+               <span style={{ position: "absolute", bottom: -10, left: 150}}>
                 {!!rows[0].length ? (                                                      
                     <FarmCard farm={rows[0][2]} />
                   ) : (

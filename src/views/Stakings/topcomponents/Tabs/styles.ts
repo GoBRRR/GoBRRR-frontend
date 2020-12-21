@@ -38,10 +38,12 @@ export const Button = styled.button`
     bottom: 0;
     left: 0;
 
-    height: 5px;
+    height: 30px;
     width: 0%;
 
-    background-color: var(--primary);
+    opacity: 0.5;
+
+    background-color: #f2ec48;
     transition: 0.4s;
   }
 

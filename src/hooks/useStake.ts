@@ -1,33 +1,26 @@
 import { useCallback } from 'react'
 
-import useCrops from './useCrops'
+import useBrrr from './useBrrr'
 import { useWallet } from 'use-wallet'
 
-import { stake, getCrops, getEarned, getMasterChefContract, getMasterChefAddress, getCropsAddress, getWethContract, getCropsContract } from '../crops/utils'
+import { stake, getMasterChefContract } from '../brrr/utils'
 
 const useStake = (pid: number) => {
   const { account } = useWallet()
-  const crops = useCrops()
+  const brrr = useBrrr()
 
   const handleStake = useCallback(
-    async (amount: string) => {
-
-      const masterfarmer = getMasterChefContract(crops)
-      const masterfarmeraddress = getMasterChefAddress(crops)
-      const cropsaddress = getCropsAddress(crops)
-      const WethContract = getWethContract(crops)
-      const CropsContract = getCropsContract(crops)
-      const getCrop = getCrops(crops)
+    async (amount: string) => {          
 
       const txHash = await stake(
-        getMasterChefContract(crops),
+        getMasterChefContract(brrr),
         pid,
         amount,
         account,
       )
       console.log(txHash)
     },
-    [account, pid, crops],
+    [account, pid, brrr],
   )
 
   return { onStake: handleStake }
