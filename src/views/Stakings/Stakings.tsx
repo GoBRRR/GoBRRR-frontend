@@ -49,7 +49,8 @@ const StyledbrWrapper = styled.div`
   @media (max-width: 768px) {
     width: 100%;
   }
-  padding-bottom: 10px;
+  padding-top: 30px;
+  margin-top: 10px;
 `
 
 export default Balances

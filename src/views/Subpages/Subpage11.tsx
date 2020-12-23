@@ -55,7 +55,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
   
   return (
     <StyledCardWrapper> 
-        APY 23%
+        0.0115 tokens per block
         <Spacer /> 
     </StyledCardWrapper>
   )
@@ -131,7 +131,9 @@ const Subpage11: React.FC = () => {
  
   return (
     <StyledFarm>
-    <StyledWrapper>           
+    <StyledWrapper>
+      <StyledNav>
+        <FirstLink>      
       <StyledBalance>
       <Spacer />
         <div style={{ flex: 1 }}>
@@ -144,12 +146,14 @@ const Subpage11: React.FC = () => {
           </StyledWrapper>
         </div>
       </StyledBalance>
+      </FirstLink>
 
+      <SecondLink>
       <Styledimg>
         <StyledBalance>
           <div style={{ flex: 1 }}>          
               <Brrrethapy/>
-              <span style={{ position: "absolute", bottom: -20, left: 130}}>              
+              <span style={{ position: "absolute", bottom: -20, left: 60}}>              
               {!!rows[0].length ? (                                                      
                   <FarmCard farm={rows[0][0]} />
                 ) : (
@@ -159,16 +163,18 @@ const Subpage11: React.FC = () => {
                 )}
               </span>
           </div>
-        </StyledBalance>
-        
+        </StyledBalance>        
       </Styledimg>
+      </SecondLink>
+      
+      <ThirdLink>
       <StyledBalance>
         <Spacer />
         <Harvest pid={pid} />
       </StyledBalance>
-      
+      </ThirdLink>
       <Spacer size="lg" />
-    
+      </StyledNav> 
     </StyledWrapper>
     
     </StyledFarm>
@@ -183,6 +189,10 @@ const StyledWrapper = styled.div`
   justify-content: center;
   align-items: center;
   margin-right: 30px;
+  @media(max-width:860px){
+    width:100%;
+    margin-top:5px;
+  }
 `
 
 const Styledimg = styled.div`
@@ -224,6 +234,39 @@ const StyledCardWrapper = styled.div`
   color: #06f74f;
   font-size:20px;
   font-weight:700;
+`
+
+const FirstLink = styled.div`
+  display:flex;
+  flex:40%;
+  @media(max-width:860px){
+    flex:100%;
+    margin-top:5px;
+  }
+`
+const SecondLink = styled.div`
+  display:flex;
+  flex:30%;
+  @media(max-width:860px){
+    flex:100%;
+    margin-top:5px;
+  } 
+`
+const ThirdLink = styled.div`
+  display:flex;
+  flex:40%;
+  @media(max-width:860px){
+    flex:30%;
+    margin-top:5px;
+  } 
+`
+
+const StyledNav = styled.div`
+  align-items: center;
+  display: flex;
+  @media(max-width:860px){
+    flex-direction: column;
+  }
 `
 
 export default Subpage11

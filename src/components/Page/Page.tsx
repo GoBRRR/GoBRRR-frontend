@@ -16,7 +16,10 @@ const StyledMain = styled.div`
   display: flex;
   background-color: #153e90;
   flex-direction: column;
-  min-height: calc(100vh - ${(props) => props.theme.topBarSize * 2}px);
+  min-height: calc(100vh - ${(props) => props.theme.topBarSize * 2}px); 
+  @media(max-width:860px){
+    padding-top:80px;
+  }
 `
 
 export default Page

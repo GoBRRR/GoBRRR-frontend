@@ -7,6 +7,7 @@ export const TabLinks = styled.div`
   justify-content: center;
   margin-bottom: 5px;
   width:100%;
+  margin-top:10px;
 `;
 
 export const TabBottomline = styled.hr`  

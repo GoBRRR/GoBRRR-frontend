@@ -75,10 +75,10 @@ const Balances: React.FC = () => {
     {!!account ? (
           <>          
           <Container>
-
             <StyledTitle>
               {"My Account Summary"}
             </StyledTitle>
+            
 
             <StyledFlexLayout>
               <StyledItemblankLayout>          
@@ -118,7 +118,6 @@ const Balances: React.FC = () => {
 
               <StyledItemblankLayout>          
               </StyledItemblankLayout>
-
               <StyledItemLayout>
                 <StyledBalances>
                   <ChangedBrrrIcon />
@@ -144,6 +143,7 @@ const Balances: React.FC = () => {
                   {"My Total Claimable Rewards"}
                 </StyledSubValue>
               </StyledItemLayout>
+              
 
               <StyledItemblankLayout>          
               </StyledItemblankLayout>
@@ -211,6 +211,7 @@ const StyledTitle = styled.h2`
   > b {
     color: ${(props) => props.theme.color.grey[900]};
   }
+  
 `
 
 const StyledFlexLayout = styled.div`
@@ -218,10 +219,15 @@ const StyledFlexLayout = styled.div`
   justify-content: center;
   margin-bottom: 30px;
   margin-left:30px;
+  @media (max-width: 768px) {
+    width: 100%;
+    flex-flow: column nowrap;
+    align-items: stretch;
+  }
 `
 const StyledItemLayout = styled.div`
   display: block;
-  width: 50%; 
+  width: 80%; 
 `
 
 const StyledItemblankLayout = styled.div`

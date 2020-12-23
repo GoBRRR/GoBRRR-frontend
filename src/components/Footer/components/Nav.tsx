@@ -10,7 +10,6 @@ const Nav: React.FC = () => {
       </Styledlayout>
       
       <Spacer/>
-      <Spacer/>
 
       <StyledLink
         href="https://twitter.com/GoBRRR_finance"
@@ -18,18 +17,14 @@ const Nav: React.FC = () => {
       >
         TWITTER
       </StyledLink> 
-      <StyledLink>
-        |
-      </StyledLink>
+      
       <StyledLink
         href="https://t.me/Go_BRRR"
         target="_blank"
       >
         TELEGRAM
       </StyledLink>
-      <StyledLink>
-        |
-      </StyledLink>
+      
       <StyledLink
         href="https://github.com/GoBRRR"
         target="_blank"
@@ -45,48 +40,30 @@ const StyledNav = styled.nav`
   align-items: center;
   display: flex;
   background-color: #153e90;
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `
 const Styledlayout = styled.nav`
   display: flex;
-  padding-right: ${(props) => props.theme.spacing[40]}px;
   color: #06f74f;
-  font-size: 20px;
-  font-weight: 800;
-`
-
-
-const StyledLink = styled.a`
-  font-family: Lucida Console,Monaco,monospace;
-  font-weight: 600;
-  font-size: 20px;
-  font-weight: 800;
-  color: ${(props) => props.theme.color.grey[400]};
-  padding-left: ${(props) => props.theme.spacing[1]}px;
-  padding-right: ${(props) => props.theme.spacing[1]}px;
-  text-decoration: none;
-  &:hover {
-    color: #f0e64d;
+  font-size: 18px;
+  flex:60%;
+  margin-right:40px;
+  @media (max-width: 768px) {
+    margin-right:0px;
   }
 `
-
-const StyledAbsoluteLink = styled.a`
+const StyledLink = styled.a`
   color: ${(props) => props.theme.color.grey[400]};
-  font-weight: 800;
-  font-size: 20px;
   padding-left: ${(props) => props.theme.spacing[3]}px;
   padding-right: ${(props) => props.theme.spacing[3]}px;
-  padding-top: ${(props) => props.theme.spacing[1]}px;
   text-decoration: none;
   &:hover {
-    color: ${(props) => props.theme.color.grey[500]};
+    color: #ffea00;
   }
-  &.active {
-    color: ${(props) => props.theme.color.primary.main};
-  }
-  @media (max-width: 400px) {
-    padding-left: ${(props) => props.theme.spacing[2]}px;
-    padding-right: ${(props) => props.theme.spacing[2]}px;
-  }
+  flex:15%;
+  font-weight: 600;
 `
 
 export default Nav

@@ -55,7 +55,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm }) => {
   
   return (
     <StyledCardWrapper> 
-        APY 15%
+        0.0075 tokens per block
         <Spacer /> 
     </StyledCardWrapper>
   )
@@ -125,7 +125,9 @@ const Subpage15: React.FC = () => {
   )
   return (
     <StyledFarm>
-    <StyledWrapper>           
+    <StyledWrapper>
+    <StyledNav>
+    <FirstLink>          
       <StyledBalance>
       <Spacer />
         <div style={{ flex: 1 }}>
@@ -138,12 +140,13 @@ const Subpage15: React.FC = () => {
           </StyledWrapper>
         </div>
       </StyledBalance>
-
+      </FirstLink>
+      <SecondLink>
       <Styledimg>
         <StyledBalance>
           <div style={{ flex: 1 }}>          
               <Brrrusdcapy/>
-              <span style={{ position: "absolute", bottom: -10, left: 130}}>
+              <span style={{ position: "absolute", bottom: -10, left: 70}}>
               
                 {!!rows[0].length ? (                                                      
                   <FarmCard farm={rows[0][4]} />
@@ -158,13 +161,15 @@ const Subpage15: React.FC = () => {
         </StyledBalance>
         
       </Styledimg>
+      </SecondLink>
+      <ThirdLink>
       <StyledBalance>
         <Spacer />
         <Harvest pid={pid} />
       </StyledBalance>
-      
+      </ThirdLink>
       <Spacer size="lg" />
-    
+      </StyledNav>
     </StyledWrapper>
     
     </StyledFarm>
@@ -182,12 +187,16 @@ const StyledWrapper = styled.div`
   justify-content: center;
   align-items: center;
   margin-right: 30px;
+  @media(max-width:860px){
+    width:100%;
+    margin-top:5px;
+  }
 `
 
 const Styledimg = styled.div`
   padding-left:20px;
   position: relative;  
-  margin-right: 35px;
+  margin-right: 45px;
 `
 
 const StyledBalance = styled.div`
@@ -209,7 +218,6 @@ const StyledFarm = styled.div`
   flex-direction: column;  
 `
 
-
 const StyledLoadingWrapper = styled.div`
   align-items: center;
   display: flex;
@@ -224,6 +232,39 @@ const StyledCardWrapper = styled.div`
   color: #06f74f;
   font-size:20px;
   font-weight:700;
+`
+
+const FirstLink = styled.div`
+  display:flex;
+  flex:40%;
+  @media(max-width:860px){
+    flex:100%;
+    margin-top:5px;
+  }
+`
+const SecondLink = styled.div`
+  display:flex;
+  flex:30%;
+  @media(max-width:860px){
+    flex:100%;
+    margin-top:5px;
+  } 
+`
+const ThirdLink = styled.div`
+  display:flex;
+  flex:40%;
+  @media(max-width:860px){
+    flex:30%;
+    margin-top:5px;
+  } 
+`
+
+const StyledNav = styled.div`
+  align-items: center;
+  display: flex;
+  @media(max-width:860px){
+    flex-direction: column;
+  }
 `
 
 export default Subpage15

@@ -27,6 +27,10 @@ const StyledPageHeader = styled.div`
   padding-bottom: ${(props) => props.theme.spacing[6]}px;
   padding-top: ${(props) => props.theme.spacing[6]}px;
   margin: 0 auto;
+  @media(max-width:860px){
+    flex:100%;
+    margin-top:5px;
+  } 
 `
 
 const StyledTitle = styled.h1`
@@ -37,6 +41,10 @@ const StyledTitle = styled.h1`
   margin: 0;
   padding: 0;
   color: #2ac158;
+  @media(max-width:860px){
+    flex:100%;
+    margin-top:5px;
+  } 
 `
 
 const StyledSubtitle = styled.h3`
@@ -47,6 +55,11 @@ const StyledSubtitle = styled.h3`
   padding: 0;
   margin-top:25px;
   text-align: center;
+  @media(max-width:860px){
+    flex:100%;
+    margin-top:5px;
+  } 
 `
+
 
 export default HomePageHeader

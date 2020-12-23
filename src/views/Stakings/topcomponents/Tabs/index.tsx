@@ -17,7 +17,9 @@ import Layout4 from '../../../Subpages/Subpage14';
 import Layout5 from '../../../Subpages/Subpage15';
 
 import GlobalStyles from '../../../../styles/global';
-import Spacer from '../../../../components/Spacer'
+import Spacer from '../../../../components/Spacer';
+
+import styled from 'styled-components'
 
 const Tabs: React.FC = () => {
   const [ethbrrr, setEthBrrr] = useState('active');
@@ -25,6 +27,7 @@ const Tabs: React.FC = () => {
   const [daibrrr, setDaiBrrr] = useState('hidden');
   const [wbtcbrrr, setWbtcBrrr] = useState('hidden');
   const [usdcbrrr, setUsdcBrrr] = useState('hidden');
+  
 
   function handleTabLink(id: string): void {
     switch (id) {
@@ -71,6 +74,8 @@ const Tabs: React.FC = () => {
   return (
     <Container>      
       <TabLinks>
+      <StyledNav>
+        <FirstLink>
         <Button
           type="button"
           className={ethbrrr}
@@ -84,7 +89,7 @@ const Tabs: React.FC = () => {
           className={unibrrr}
           onClick={() => handleTabLink('unibrrr')}
         >
-          <UniBrrr/>
+          <UniBrrr/> 
         </Button>
         <Spacer/>
         <Button
@@ -94,7 +99,9 @@ const Tabs: React.FC = () => {
         >
           <DaiBrrr/>
         </Button>
+        </FirstLink>
         <Spacer/>
+        <SecondLink>
         <Button
           type="button"
           className={wbtcbrrr}
@@ -110,7 +117,10 @@ const Tabs: React.FC = () => {
         >
           <UsdcBrrr/>
         </Button>
+        </SecondLink>
+        </StyledNav>
       </TabLinks>
+
       <TabContent>
         <Section className={ethbrrr}>
           <Footnote>Farm your BRRR and grow more BRRR</Footnote>
@@ -152,11 +162,36 @@ const Tabs: React.FC = () => {
           <GlobalStyles/>
         </Section>
       </TabContent>
-    </Container>
+
+
+      </Container>
   );
   
 };
 
+const FirstLink = styled.div`
+  display:flex;
+  flex:60%;
+  @media(max-width:860px){
+    flex:100%;
+    margin-top:5px;
+  }
+`
+const SecondLink = styled.div`
+  display:flex;
+  flex:40%;
+  @media(max-width:860px){
+    flex:100%;
+    margin-top:5px;
+  } 
+`
+const StyledNav = styled.div`
+  align-items: center;
+  display: flex;
+  @media(max-width:860px){
+    flex-direction: column;
+  }
+`
 
 
 export default Tabs;

@@ -78,13 +78,17 @@ const StyledBalance = styled.div`
   display: flex;
   margin-left: auto;
   margin-right: auto;
-  width: 25%;
+  width: 20%;
   align-items: center;
   justify-content: center;
   text-align:center;
   padding-top:15px;
   padding-bottom:15px;
   color: ${(props) => props.theme.color.grey[900]};
+  @media (max-width: 768px) {
+    width: 60%;
+    align-items: stretch;
+  }
 `
 
 const StyledValue = styled.div`
@@ -102,6 +106,10 @@ const StyledValueBelow = styled.div`
   font-weight: 800;
   padding-bottom: 1px;
   color: #e2ee2a;
+  @media (max-width: 768px) {
+    width:100%;
+    margin-top:5px;
+  }
 `
 
 export default Subpage01

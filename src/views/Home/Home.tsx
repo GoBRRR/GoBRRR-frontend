@@ -6,26 +6,19 @@ import Page from '../../components/Page'
 import HomePageHeader from '../../components/HomePageHeader'
 import Spacer from '../../components/Spacer'
 import Balances from './components/Balances'
+import {Image} from 'react-bootstrap'
 
 const Home: React.FC = () => {
   return (
     <Page>
-      <HomePageHeader        
-        title="Welcome to GoBRRR"
-        subtitle="Stake Uniswap LP Tokens to Claim BRRR"
-      />
+      <PageStyle>
+        <HomePageHeader        
+          title="Welcome to GoBRRR"
+          subtitle="Stake Uniswap LP Tokens to Claim BRRR"
+        />
+      </PageStyle>
       <Container>
-      <div
-            style={{
-              alignItems: 'center',
-              display: 'flex',
-              flex: 1,
-              marginBottom: 30,
-              justifyContent: 'center',
-            }}
-          >
-        <img src={chef} height={500} width={600} />
-        </div>
+        <Image src={chef} rounded style={crazy}/>
       </Container>
       <Container>
         <Balances />
@@ -39,8 +32,21 @@ const Home: React.FC = () => {
       >
         
       </div>
+      
     </Page>
   )
+}
+
+const PageStyle = styled.div`
+  @media(max-width:860px){
+    margin-top:25px;
+  } 
+`
+const crazy= {
+  display: 'flex',
+  marginBottom:30,
+  width:'100%',
+  height:'600px',
 }
 
 

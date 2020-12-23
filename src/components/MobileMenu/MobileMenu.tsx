@@ -17,22 +17,23 @@ const MobileMenu: React.FC<MobileMenuProps> = ({ onDismiss, visible }) => {
           <StyledLink exact activeClassName="active" to="/" onClick={onDismiss}>
             Home
           </StyledLink>
-          <StyledLink
-            exact
-            activeClassName="active"
-            to="/farms"
-            onClick={onDismiss}
-          >
-            Farms
+          <StyledLink exact activeClassName="active" to="/Tokenomics" onClick={onDismiss}>
+            Tokenomics
           </StyledLink>
-          <StyledLink
-            exact
-            activeClassName="active"
-            to="/staking"
-            onClick={onDismiss}
-          >
-            Staking
+          <StyledLink exact activeClassName="active" to="/Farm" onClick={onDismiss}>
+            Farm
           </StyledLink>
+          <StyledLink exact activeClassName="active" to="/Info" onClick={onDismiss}>
+            Info
+          </StyledLink>
+          <StyledAbsoluteLink href="https://info.uniswap.org/token/0xb53189eb5ab4a0c866736b3a17ac5a847cdb5b55"
+        target="_blank" onClick={onDismiss}>
+            BUY BRRR
+          </StyledAbsoluteLink>
+          <StyledAbsoluteLink href="https://gobrrr.medium.com"
+        target="_blank" onClick={onDismiss}>
+            ABOUT
+          </StyledAbsoluteLink>
         </StyledMobileMenu>
       </StyledMobileMenuWrapper>
     )
@@ -98,6 +99,26 @@ const StyledLink = styled(NavLink)`
   }
   &.active {
     color: ${(props) => props.theme.color.primary.main};
+  }
+`
+
+const StyledAbsoluteLink = styled.a`
+  color: #fff;
+  font-weight: 800;
+  font-size: 20px;
+  padding-left: ${(props) => props.theme.spacing[3]}px;
+  padding-right: ${(props) => props.theme.spacing[3]}px;
+  padding-top: ${(props) => props.theme.spacing[1]}px;
+  text-decoration: none;
+  &:hover {
+    color: #f0e64d;
+  }
+  &.active {
+    color: ${(props) => props.theme.color.primary.main};
+  }
+  @media (max-width: 1800px) {
+    padding-left: ${(props) => props.theme.spacing[2]}px;
+    padding-right: ${(props) => props.theme.spacing[2]}px;
   }
 `
 

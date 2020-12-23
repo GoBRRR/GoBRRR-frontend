@@ -19,10 +19,12 @@ const TopBar: React.FC<TopBarProps> = ({ onPresentMobileMenu }) => {
           <StyledLogoWrapper>
             <Logo />
           </StyledLogoWrapper>
-          <Nav />
-          <StyledAccountButtonWrapper>
+          <StyledLogoWrapperNav>
+            <Nav />
+          </StyledLogoWrapperNav>          
+          <StyledLogoWrapperButton>
             <AccountButton />
-          </StyledAccountButtonWrapper>
+          </StyledLogoWrapperButton>
         </StyledTopBarInner>
       </Container>
     </StyledTopBar>
@@ -31,8 +33,14 @@ const TopBar: React.FC<TopBarProps> = ({ onPresentMobileMenu }) => {
 
 const StyledLogoWrapper = styled.div`
   width: 260px;
-  @media (max-width: 400px) {
+  @media (max-width: 860px) {
     width: auto;
+  }
+  display: flex;
+  flex:25%;
+  @media(max-width:860px){
+    flex:100%;
+    margin-top:20px;
   }
 `
 
@@ -46,42 +54,24 @@ const StyledTopBarInner = styled.div`
   height: ${(props) => props.theme.topBarSize}px;
   justify-content: space-between;
   max-width: ${(props) => props.theme.siteWidth}px;
-  width: 100%;
-`
-const StyledNavWrapper = styled.div`
-  display: flex;
-  flex: 1;
-  justify-content: center;
-  @media (max-width: 400px) {
-    display: none;
+  @media(max-width:860px){
+    flex-direction: column;
   }
 `
-
-const StyledAccountButtonWrapper = styled.div`
-  align-items: center;
-  display: flex;
-  justify-content: flex-end;
-  width: 156px;
-  @media (max-width: 400px) {
-    justify-content: center;
-    width: auto;
+const StyledLogoWrapperNav = styled.div`
+  display:flex;
+  flex:60%;
+  @media(max-width:860px){
+    flex:100%;
   }
 `
-
-const StyledMenuButton = styled.button`
-  background: none;
-  border: 0;
-  margin: 0;
-  outline: 0;
-  padding: 0;
-  display: none;
-  @media (max-width: 400px) {
-    align-items: center;
-    display: flex;
-    height: 44px;
-    justify-content: center;
-    width: 44px;
+const StyledLogoWrapperButton = styled.div`
+  display:flex;
+  flex:15%;
+  @media(max-width:860px){
+    flex:100%;
+    margin-top:10px;
+    margin-bottom:10px;
   }
 `
-
 export default TopBar

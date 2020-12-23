@@ -24,18 +24,18 @@ export const INTEGERS = {
 
 export const contractAddresses = {
   brrr: {
-    //1: '0xb53189EB5ab4A0C866736b3A17ac5A847CdB5b55',
-    3: '0xFf262706Fc6ab36577441366f69B099fEE416A16',
+    1: '0xb53189EB5ab4A0C866736b3A17ac5A847CdB5b55',
+    //3: '0xFf262706Fc6ab36577441366f69B099fEE416A16',
     //42: '0x02CECED9749cAfC8473468a51F9BE0b61a2a0542',
   },
   masterChef: {
-    //1: '0x8B225B3CadB799FB5fd6E5902C1C4F609D3E17e5',
-    3: '0x068f8fc7f501523c59B28DDF719e8E4F70d9531f',
+    1: '0x8B225B3CadB799FB5fd6E5902C1C4F609D3E17e5',
+    //3: '0x068f8fc7f501523c59B28DDF719e8E4F70d9531f',
     //42: '0xEFa7b6952535b70807ce012D19D13d18970Bb58d',
   },  
   weth: {
-    //1: '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
-    3: '0xc778417e063141139fce010982780140aa0cd5ab', 
+    1: '0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2',
+    //3: '0xc778417e063141139fce010982780140aa0cd5ab', 
     //42: '0x2bfCCE707529264856d87DEeeeB64cdcFf755a84', 
   },
 }
@@ -45,13 +45,13 @@ export const supportedPools = [
   {
     pid: 0,
     lpAddresses: {
-      //1:'0xbf480053f2a3cd252ed1646ca468c477896126ae',
-      3:'0xbf480053f2a3cd252ed1646ca468c477896126ae',
+      1:'0x6283f40cd15b488f1b22ac72cdd96fe7ef6d9439',
+      //3:'0xbf480053f2a3cd252ed1646ca468c477896126ae',
       //42: '0x85b92eb6c67789f60a1b6b0d934196a2c35aa46f',
     },
     tokenAddresses: {
-      //1:'0xb53189EB5ab4A0C866736b3A17ac5A847CdB5b55',
-      3:'0xFf262706Fc6ab36577441366f69B099fEE416A16',
+      1:'0xb53189EB5ab4A0C866736b3A17ac5A847CdB5b55',
+      //3:'0xFf262706Fc6ab36577441366f69B099fEE416A16',
       //42: '0x02CECED9749cAfC8473468a51F9BE0b61a2a0542',
     },
     name: 'BRRR-ETH',
@@ -63,13 +63,13 @@ export const supportedPools = [
   {
     pid: 1,
     lpAddresses: {
-      //1:'0xd693a3243553474a8a394829e4f12c8c55bab10b',
-      3:'0xd693a3243553474a8a394829e4f12c8c55bab10b',
+      1:'0xe56b646449f3a900a610f442f35939b3b0f71fb1',
+      //3:'0xd693a3243553474a8a394829e4f12c8c55bab10b',
       //42: '0x85b92eb6c67789f60a1b6b0d934196a2c35aa46f',
     },
     tokenAddresses: {
-      //1:'0xb53189EB5ab4A0C866736b3A17ac5A847CdB5b55',
-      3:'0xFf262706Fc6ab36577441366f69B099fEE416A16',
+      1:'0xb53189EB5ab4A0C866736b3A17ac5A847CdB5b55',
+      //3:'0xFf262706Fc6ab36577441366f69B099fEE416A16',
       //42: '0x02CECED9749cAfC8473468a51F9BE0b61a2a0542',
     },
     name: 'BRRR-UNI',
@@ -80,13 +80,13 @@ export const supportedPools = [
   {
     pid: 2,
     lpAddresses: {
-      //1:'0x8d184d2de467be71544fc104738e56de55f53c42',
-      3:'0x8d184d2de467be71544fc104738e56de55f53c42',
+      1:'0x1f3619df8c6d536bb7ec10e1035654778f53bed9',
+      //3:'0x8d184d2de467be71544fc104738e56de55f53c42',
       //42: '0x85b92eb6c67789f60a1b6b0d934196a2c35aa46f',
     },
     tokenAddresses: {
-      //1:'0xb53189EB5ab4A0C866736b3A17ac5A847CdB5b55',
-      3:'0xFf262706Fc6ab36577441366f69B099fEE416A16',
+      1:'0xb53189EB5ab4A0C866736b3A17ac5A847CdB5b55',
+      //3:'0xFf262706Fc6ab36577441366f69B099fEE416A16',
       //42: '0x02CECED9749cAfC8473468a51F9BE0b61a2a0542',
     },
     name: 'BRRR-DAI',
@@ -97,13 +97,13 @@ export const supportedPools = [
   {
     pid: 3,
     lpAddresses: {
-      //1:'0x0797076aa815dd70444dfe09cbbbe76a88d47d3d',
-      3:'0x0797076aa815dd70444dfe09cbbbe76a88d47d3d',
+      1:'0x2ba496780e10b96ddce33a4a0f90e4eb807c116c',
+      //3:'0x0797076aa815dd70444dfe09cbbbe76a88d47d3d',
       //42: '0x85b92eb6c67789f60a1b6b0d934196a2c35aa46f',
     },
     tokenAddresses: {
-      //1:'0xb53189EB5ab4A0C866736b3A17ac5A847CdB5b55',
-      3:'0xFf262706Fc6ab36577441366f69B099fEE416A16',
+      1:'0xb53189EB5ab4A0C866736b3A17ac5A847CdB5b55',
+      //3:'0xFf262706Fc6ab36577441366f69B099fEE416A16',
       //42: '0x02CECED9749cAfC8473468a51F9BE0b61a2a0542',
     },
     name: 'BRRR-WBTC',
@@ -114,13 +114,13 @@ export const supportedPools = [
   {
     pid: 4,
     lpAddresses: {
-      //1:'0x9e269742b87cabd2abd9c9a4bf19f87221bffbd0',
-      3:'0x9e269742b87cabd2abd9c9a4bf19f87221bffbd0',
+      1:'0xac092c212bb472a7992e8e9071f636d3cda916ad',
+      //3:'0x9e269742b87cabd2abd9c9a4bf19f87221bffbd0',
       //42: '0x66412bbbe59af66a56357fc348e3c33f1788daa3',
     },
     tokenAddresses: {
-      //1:'0xb53189EB5ab4A0C866736b3A17ac5A847CdB5b55',
-      3:'0xFf262706Fc6ab36577441366f69B099fEE416A16',
+      1:'0xb53189EB5ab4A0C866736b3A17ac5A847CdB5b55',
+      //3:'0xFf262706Fc6ab36577441366f69B099fEE416A16',
       //42: '0x02CECED9749cAfC8473468a51F9BE0b61a2a0542',
     },
     name: 'BRRR-USDC',

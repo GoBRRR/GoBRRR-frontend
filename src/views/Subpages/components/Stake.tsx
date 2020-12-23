@@ -86,7 +86,7 @@ const Stake: React.FC<StakeProps> = ({ lpContract, pid, tokenName }) => {
               <Button
                 disabled={requestedApproval}
                 onClick={handleApprove}
-                text={`Approve ${tokenName}`}
+                text={`Approve`}
               />
             ) : (
               <>
