@@ -12,7 +12,7 @@ const Nav: React.FC = () => {
       <Spacer/>
 
       <StyledLink
-        href="https://twitter.com/GoBRRR_finance"
+        href="https://twitter.com/GoBRRR_Farm"
         target="_blank"
       >
         TWITTER
